@@ -1,0 +1,10 @@
+patient:
+  first_name:
+  last_name:
+  ramq:
+  ramq_seq: 1
+  dob_day:
+  dob_month:
+  dob_year:
+  date_range: 01-08-2022
+  perimeter: 1  # 1= 10-20km perimeter
