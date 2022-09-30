@@ -49,10 +49,32 @@ $ pip install new_package==1.2.3
 echo "new_package=1.2.3" >> requirements.txt
 ```
 
-## Unit Tests
+## Configuration options
 
-See other templates for example.
+(Use these values to configure the `config.yml` file)
 
-## TODO
+### Reason options
 
-Automatic run tests on code change.
+38663537-3261-3233-2d31-3033352d3431 - Urgence mineure
+
+31653438-3432-3237-2d34-3062652d3436 - Consultation prioritaire
+
+66316339-3434-3431-2d39-3464612d3463 - Suivi périodique ou préventif
+
+39333631-3230-3732-2d63-6362372d3461 - Suivi régulier
+
+66653736-3031-3266-2d34-3336312d3462 - Suivi de grossesse
+
+33363931-6230-3034-2d37-6638392d3432 - Suivi d’un enfant de 0 à 5 ans
+
+### Perimeter options
+
+"0" = 0 à 10 km
+
+"1" = 10 à 20 km
+
+"2" = 20 à 30 km
+
+"3" = 30 à 40 km
+
+"4" = 40 à 50 km

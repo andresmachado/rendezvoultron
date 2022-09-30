@@ -16,6 +16,7 @@ class RendezVousConfig:
     dob_year: str
     date_range: str
     perimeter: str
+    reason: str
 
 
 class PersonLoader:

@@ -54,7 +54,7 @@ def main():
     submit_btn = driver.find_element_by_name("ctl00$ContentPlaceHolderMP$myButton")
     submit_btn.click()
 
-    WebDriverWait(driver, 5).until(EC.invisibility_of_element_located((By.ID, "greyCover")))
+    WebDriverWait(driver, 3).until(EC.invisibility_of_element_located((By.ID, "greyCover")))
 
     next_step_link = driver.find_element_by_xpath(
         "//div[text()='Prendre rendez-vous dans une clinique à proximité']"
@@ -67,10 +67,10 @@ def main():
     date_range.send_keys(person.date_range)
 
     consulting_reason = Select(driver.find_element_by_name("consultingReason"))
-    consulting_reason.select_by_value("38663537-3261-3233-2d31-3033352d3431")
+    consulting_reason.select_by_value(person.reason)
 
     perimeter = Select(driver.find_element_by_name("perimeterCombo"))
-    perimeter.select_by_value("1")
+    perimeter.select_by_value(person.perimeter)
 
     search_btn = driver.find_element_by_xpath(
         "//button[text()='Rechercher']"
@@ -101,6 +101,14 @@ def main():
             no_available_clinics = driver.find_element_by_id(
                 "clinicsWithNoDisponibilitiesContainer"
             )
+
+    WebDriverWait(driver, 30).until(
+        EC.visibility_of_element_located((By.ID, "ClinicList"))
+    )
+
+    clinic_list = driver.find_elements_by_class_name('h-selectClinic')
+    first_clinic = clinic_list[1]
+    first_clinic.click()
 
 
 if __name__ == '__main__':
