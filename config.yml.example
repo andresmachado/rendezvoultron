@@ -1,14 +1,19 @@
 patient:
-  first_name:
-  last_name:
-  ramq:
+  first_name: xxx
+  last_name: xxx
+  ramq: XXXX00000000
   ramq_seq: 1
-  dob_day:
-  dob_month:
-  dob_year:
-  date_range: 01-08-2022
-  perimeter: 1
-  reason:
+  dob_day: dd
+  dob_month: "MM"
+  dob_year: yyyy
+  genre: "M"
+  date_range: dd-MM-yyyy
+  perimeter: "1"
+  reason: "38663537-3261-3233-2d31-3033352d3431"
+
+# genre options
+# "M" - Male
+# "F" - Female
 
 # reason options
 # 38663537-3261-3233-2d31-3033352d3431 - Urgence mineure
