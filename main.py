@@ -48,7 +48,11 @@ def main():
     dob_year = driver.find_element_by_name("ctl00$ContentPlaceHolderMP$AssureForm_Year")
     dob_year.send_keys(person.dob_year)
 
-    genre = driver.find_element_by_name("ctl00$ContentPlaceHolderMP$FemaleOrMale")
+    genre = driver.find_element_by_id(
+            "ctl00_ContentPlaceHolderMP_MaleGender")
+    if person.genre == "F":
+        genre = driver.find_element_by_id(
+            "ctl00_ContentPlaceHolderMP_FemaleGender")
     genre.click()
 
     submit_btn = driver.find_element_by_name("ctl00$ContentPlaceHolderMP$myButton")
@@ -61,10 +65,10 @@ def main():
     )
     next_step_link.click()
 
-    date_range = driver.find_element_by_id("DateRangeStart")
-    date_range.clear()
-    date_range.click()
-    date_range.send_keys(person.date_range)
+    #date_range = driver.find_element_by_id("DateRangeStart")
+    #date_range.clear()
+    #date_range.click()
+    #date_range.send_keys(person.date_range)
 
     consulting_reason = Select(driver.find_element_by_name("consultingReason"))
     consulting_reason.select_by_value(person.reason)
