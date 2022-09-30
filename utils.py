@@ -14,6 +14,7 @@ class RendezVousConfig:
     dob_day: str
     dob_month: str
     dob_year: str
+    genre: str
     date_range: str
     perimeter: str
     reason: str
