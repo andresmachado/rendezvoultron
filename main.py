@@ -58,6 +58,13 @@ def main():
     submit_btn = driver.find_element_by_name("ctl00$ContentPlaceHolderMP$myButton")
     submit_btn.click()
 
+    try:
+        WebDriverWait(driver, 10).until(
+            EC.element_to_be_clickable((By.CLASS_NAME, 'h-CloseButton'))
+        ).click()
+    except Exception:
+        pass
+
     WebDriverWait(driver, 3).until(EC.invisibility_of_element_located((By.ID, "greyCover")))
 
     next_step_link = driver.find_element_by_xpath(
@@ -65,10 +72,6 @@ def main():
     )
     next_step_link.click()
 
-    #date_range = driver.find_element_by_id("DateRangeStart")
-    #date_range.clear()
-    #date_range.click()
-    #date_range.send_keys(person.date_range)
 
     consulting_reason = Select(driver.find_element_by_name("consultingReason"))
     consulting_reason.select_by_value(person.reason)
@@ -106,7 +109,7 @@ def main():
                 "clinicsWithNoDisponibilitiesContainer"
             )
 
-    WebDriverWait(driver, 30).until(
+    WebDriverWait(driver, 3).until(
         EC.visibility_of_element_located((By.ID, "ClinicList"))
     )
 

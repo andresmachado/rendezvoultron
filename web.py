@@ -1,6 +1,8 @@
 from selenium import webdriver
+from selenium.webdriver import DesiredCapabilities
 from selenium.webdriver.chrome.options import Options
-from webdriver_manager.chrome import ChromeDriverManager
+from webdriver_manager.firefox import GeckoDriverManager
+
 
 import config
 import logger
@@ -20,7 +22,7 @@ def start(headless=False):
     global driver
 
     if not headless:
-        driver = webdriver.Chrome(ChromeDriverManager().install())
+        driver = webdriver.Firefox(executable_path=GeckoDriverManager().install())
     elif config.headless:
         chrome_options = Options()
         chrome_options.add_argument("--headless")
