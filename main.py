@@ -63,6 +63,9 @@ def main():
         genre = driver.find_element(By.ID, "ctl00_ContentPlaceHolderMP_FemaleGender")
     genre.click()
 
+    conditions = driver.find_element(By.ID, "AssureForm_CSTMT")
+    conditions.click()
+
     submit_btn = driver.find_element(By.NAME, "ctl00$ContentPlaceHolderMP$myButton")
     submit_btn.click()
 
